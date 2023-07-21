@@ -1,6 +1,6 @@
 ### Thoughts 🎲
 
-1) Instead of creating it all in the App.jsx, I decided to use separate component files.
+1) Instead of creating it all in the App.jsx, I decided to use separate component files and move calculateWinner() to helpers.js.
 2) I enjoy short-circuit conditionals and ternary operators but they are not always readable so do not use liberally.
 3) Note that we want to preserve immutability and not alter the state itself when updating the squares array in Board.jsx, hence the use of slice().
 <hr>

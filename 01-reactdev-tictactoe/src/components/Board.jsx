@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Square } from "./Square";
+import { calculateWinner } from "../helpers";
 
 export const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
   const handleClick = (i) => {
-    if (squares[i]) {                        // turning this into short-circuit && is not as readable
+    if (squares[i] || calculateWinner(squares)) {
       return;
     }
-    const nextSquares = squares.slice();    // to preserve immutability
-    if (xIsNext) {                          // i love a ternary but it is not always readable
+    const nextSquares = squares.slice();
+    if (xIsNext) {
       nextSquares[i] = "X";
     } else {
       nextSquares[i] = "O";
@@ -19,8 +20,17 @@ export const Board = () => {
     setXIsNext(!xIsNext);
   }
 
+  const winner = calculateWinner(squares);
+  let status;
+  if (calculateWinner(squares)) {
+    status = "Winner: " + winner;
+  } else {
+    status = "Next player: " + (xIsNext ? "X" : "O");
+  }
+
   return (
     <>
+      <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
