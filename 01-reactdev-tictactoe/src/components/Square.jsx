@@ -7,3 +7,7 @@ export const Square = (props) => {
 Square.propTypes ={
   num: PropTypes.number
 }
+
+// export const Square = ({ value }) => {
+//   return <button className="square">{value}</button>;
+// }
