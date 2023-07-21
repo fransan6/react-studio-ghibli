@@ -3,11 +3,20 @@ import { Square } from "./Square";
 
 export const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState(true);
 
   const handleClick = (i) => {
+    if (squares[i]) {                     // turning this into short-circuit && is not as readable
+      return;
+    }
     const nextSquares = squares.slice(); // to preserve immutability
-    nextSquares[i] = "X";
+    if (xIsNext) {                       // i love a ternary but it is not always readable
+      nextSquares[i] = "X";
+    } else {
+      nextSquares[i] = "O";
+    }
     setSquares(nextSquares);
+    setXIsNext(!xIsNext);
   }
 
   return (
