@@ -6,11 +6,11 @@ export const Board = () => {
   const [xIsNext, setXIsNext] = useState(true);
 
   const handleClick = (i) => {
-    if (squares[i]) {                     // turning this into short-circuit && is not as readable
+    if (squares[i]) {                        // turning this into short-circuit && is not as readable
       return;
     }
-    const nextSquares = squares.slice(); // to preserve immutability
-    if (xIsNext) {                       // i love a ternary but it is not always readable
+    const nextSquares = squares.slice();    // to preserve immutability
+    if (xIsNext) {                          // i love a ternary but it is not always readable
       nextSquares[i] = "X";
     } else {
       nextSquares[i] = "O";
