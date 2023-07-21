@@ -4,19 +4,19 @@ export const Board = () => {
   return (
     <>
       <div className="board-row">
-        <Square num={1}/>
-        <Square num={2}/>
-        <Square num={3}/>
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className="board-row">
-        <Square num={4}/>
-        <Square num={5}/>
-        <Square num={6}/>
+        <Square />
+        <Square />
+        <Square />
       </div>
       <div className="board-row">
-        <Square num={7}/>
-        <Square num={8}/>
-        <Square num={9}/>
+        <Square />
+        <Square />
+        <Square />
       </div>
     </>
   );
