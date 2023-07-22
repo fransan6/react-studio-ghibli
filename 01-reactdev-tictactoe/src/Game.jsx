@@ -5,6 +5,7 @@ import './Game.css';
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+  const [sortOrder, setSortOrder] = useState('ascending');
 
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
@@ -20,23 +21,23 @@ export default function Game() {
   }
 
   const moves = history.map((_, move) => {
-    if (move === currentMove) {
+    const adjustedMove = sortOrder === 'descending' ? history.length - move - 1 : move;
+    if (adjustedMove === currentMove) {
       return (
-        <li key={move}>
-          <div>You are at move #{move}</div>
+        <li key={adjustedMove}>
+          <div>You are at move #{adjustedMove}</div>
         </li>
       );
     }
-
     let description;
-    if (move > 0) {
-      description = "Go to move #" + move;
+    if (adjustedMove > 0) {
+      description = "Go to move #" + adjustedMove;
     } else {
       description = "Go to game start";
     }
     return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+      <li key={adjustedMove}>
+        <button onClick={() => jumpTo(adjustedMove)}>{description}</button>
       </li>
     )
   })
@@ -47,6 +48,7 @@ export default function Game() {
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
+        <button onClick={() => {setSortOrder(sortOrder === 'ascending' ? 'descending' : 'ascending')}}>Toggle moves order</button>
         <ul>{moves}</ul>
       </div>
     </div>
