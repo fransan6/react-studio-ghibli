@@ -28,9 +28,9 @@ export const Board = ({ xIsNext, squares, onPlay }) => {
     const boardSquares =[];
     for (let i = 0; i < squares.length; i++) {
       if (i % 3 === 0 ) {
-        boardSquares.push(<div className="board-row"></div>);
+        boardSquares.push(<div key={`index ${i}`} className="board-row"></div>);
       }
-      boardSquares.push(<Square value={squares[i]} onSquareClick={() => handleClick(i)} />);
+      boardSquares.push(<Square key={i} value={squares[i]} onSquareClick={() => handleClick(i)} />);
     }
     return boardSquares;
   }
