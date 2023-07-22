@@ -29,8 +29,8 @@ export const ProductTable = ({ data }) => {
       <tbody>{rows}</tbody>
     </table>
   );
-};
+}
 
 ProductTable.propTypes = {
   data: PropTypes.array,
-};
+}

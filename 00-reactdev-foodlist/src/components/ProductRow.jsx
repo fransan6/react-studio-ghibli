@@ -8,9 +8,9 @@ export const ProductRow = ({ product }) => {
       <td>{name}</td>
       <td>{product.price}</td>
     </tr>
-  )
-};
+  );
+}
 
 ProductRow.propTypes = {
   product: PropTypes.object,
-};
+}
