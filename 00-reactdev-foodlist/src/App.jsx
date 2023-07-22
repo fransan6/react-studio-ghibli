@@ -10,7 +10,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("../public/db.json");
+      const response = await fetch("/db.json");
       if (!response.ok) {
         throw Error(`HTTP error: ${response.status} (${response.statusText})`)
       }
@@ -24,7 +24,9 @@ function App() {
   console.log(data.length === 6 ? data[0].category : "Data is not available yet");
 
   return (
-    <div></div>
+    <table>
+
+    </table>
   )
 }
 
