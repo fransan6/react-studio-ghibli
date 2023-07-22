@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types';
 
-export const ProductRow = ({ foodName, price, stocked }) => {
-  const name = stocked ? foodName : <span style={{ color: "#a00000" }}>{foodName}</span>;
+export const ProductRow = ({ product }) => {
+  const name = product.stocked ? product.name : <span style={{ color: "#a00000" }}>{product.name}</span>;
 
   return (
     <tr>
       <td>{name}</td>
-      <td>{price}</td>
+      <td>{product.price}</td>
     </tr>
   )
-}
+};
 
 ProductRow.propTypes = {
-  foodName: PropTypes.string,
-  price: PropTypes.string,
-  stocked: PropTypes.bool
-}
+  product: PropTypes.object,
+};

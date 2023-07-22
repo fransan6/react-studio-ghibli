@@ -6,8 +6,8 @@ export const ProductCategoryRow = ({ category }) => {
       <th colSpan="2">{category}</th>
     </tr>
   )
-}
+};
 
 ProductCategoryRow.propTypes = {
   category: PropTypes.string
-}
+};
