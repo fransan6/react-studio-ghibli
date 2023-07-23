@@ -1,6 +1,42 @@
 #root {
-  max-width: 1280px;
+  max-width: 250px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+table {
+  width: 100%;
+  border: 1px solid rgba(36, 33, 33, 0.87);
+  border-collapse: collapse;
+  margin-top: 2em;
+}
+
+td {
+  text-align: left;
+  width: 50%;
+  border: 1px solid rgba(36, 33, 33, 0.87);
+  padding: 5px;
+}
+
+th {
+  color: black;
+  padding: 3px;
+}
+
+tbody th {
+  color: blueviolet;
+  border: 1px solid rgba(36, 33, 33, 0.87);
+}
+
+form input {
+  padding: 5px;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 7px 0;
+  text-align: left;
+  font-weight: 500;
 }
