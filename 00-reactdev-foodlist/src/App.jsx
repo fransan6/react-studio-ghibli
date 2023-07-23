@@ -22,8 +22,6 @@ function App() {
     }
   }
 
-  console.log(data.length === 6 ? data[0].category : "Data is not available yet");
-
   return (
     <>
       <FilterableTable data={data}/>

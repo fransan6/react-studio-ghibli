@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { ProductCategoryRow } from "./ProductCategoryRow";
 import { ProductRow } from "./ProductRow";
 
-export const ProductTable = ({ data }) => {
+export const ProductTable = ({ data, searchText, checkboxTicked }) => {
   const rows = [];
   let lastCategory = null;
 
@@ -33,4 +33,6 @@ export const ProductTable = ({ data }) => {
 
 ProductTable.propTypes = {
   data: PropTypes.array,
+  searchText: PropTypes.string,
+  checkboxTicked: PropTypes.bool
 }
