@@ -7,6 +7,12 @@ export const ProductTable = ({ data, searchText, checkboxTicked }) => {
   let lastCategory = null;
 
   data.forEach((product) => {
+    if (checkboxTicked && !product.stocked) {
+      return;
+    }
+    if (product.name.toLowerCase().indexOf(searchText.toLowerCase()) === -1) {
+      return;
+    }
     if (product.category !== lastCategory) {
       rows.push(
         <ProductCategoryRow key={product.category} category={product.category} />
