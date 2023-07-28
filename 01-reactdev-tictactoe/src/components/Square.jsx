@@ -8,9 +8,9 @@ export const Square = (props) => {
   )
 }
 
-Square.propTypes ={
-  value: PropTypes.string,
-  onSquareClick: PropTypes.func
+Square.propTypes = {
+  value: PropTypes.string.isRequired,
+  onSquareClick: PropTypes.func.isRequired
 }
 
 // export const Square = ({ value }) => {

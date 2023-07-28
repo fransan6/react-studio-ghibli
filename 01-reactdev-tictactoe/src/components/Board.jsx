@@ -1,6 +1,6 @@
 import { Square } from "./Square";
 import PropTypes from 'prop-types';
-import { calculateWinner } from "../helpers";
+import { calculateWinner } from "../utils";
 
 export const Board = ({ xIsNext, squares, onPlay }) => {
   const handleClick = (i) => {
@@ -25,7 +25,7 @@ export const Board = ({ xIsNext, squares, onPlay }) => {
   }
 
   const createBoard = () => {
-    const boardSquares =[];
+    const boardSquares = [];
     for (let i = 0; i < squares.length; i++) {
       if (i % 3 === 0 ) {
         boardSquares.push(<div key={`index ${i}`} className="board-row"></div>);
@@ -44,9 +44,9 @@ export const Board = ({ xIsNext, squares, onPlay }) => {
 }
 
 Board.propTypes ={
-  xIsNext: PropTypes.bool,
-  squares: PropTypes.array,
-  onPlay: PropTypes.func
+  xIsNext: PropTypes.bool.isRequired,
+  squares: PropTypes.array.isRequired,
+  onPlay: PropTypes.func.isRequired
 }
 
 // return (
