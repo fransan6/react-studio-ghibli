@@ -8,11 +8,11 @@ function App() {
     fetchData();
   }, [])
 
-  const fetchData = async () => {
+  async function fetchData () {
     try {
       const response = await fetch('https://ghibliapi.vercel.app/films');
       if (!response.ok) {
-        throw Error(`HTTP error: ${response.status} (${response.statusText})`)
+        throw Error(`HTTP ${response.status}`)
       }
       const apiData = await response.json();
       setData(apiData);
@@ -21,7 +21,7 @@ function App() {
     }
   }
 
-  console.log(data)
+  console.log(data[0])
 
   return (
     <>
@@ -31,3 +31,18 @@ function App() {
 }
 
 export default App
+
+
+//  ### PROPERTIES TO USE FROM API AND NOTE TO REFERENCE NAUSICAA
+// - description
+// - director
+// - id
+// - image
+// - movie_banner
+// - original_title
+// - release_date
+// - rt_score - ==maybe==
+// - running_time
+// - title
+
+// special note about nausicaa?
