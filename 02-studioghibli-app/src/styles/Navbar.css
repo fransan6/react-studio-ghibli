@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  background-color: #00ADEF;
+  align-items: center;
+  padding: 1.2rem;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-header {
+  margin-right: auto;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgb(156, 190, 240);
+}
+
+.navbar-aside {
+  margin-right: 2rem;
+}

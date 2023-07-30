@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 // import { Fragment } from 'react';
 import './App.css'
+import Navbar from './components/Navbar';
 
 function App() {
   const [data, setData] = useState([]);
@@ -25,9 +26,12 @@ function App() {
   console.log(data[0])
 
   return (
-    <div className="container">
-      <p>Ciao!</p>
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <p>Ciao!</p>
+      </div>
+    </>
   )
 }
 
