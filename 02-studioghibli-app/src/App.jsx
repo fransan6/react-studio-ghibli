@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 // import { Fragment } from 'react';
 import './App.css'
 import Navbar from './components/Navbar';
+import Film from './components/Film';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [films, setFilms] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -17,37 +18,23 @@ function App() {
         throw Error(`HTTP ${response.status}`)
       }
       const apiData = await response.json();
-      setData(apiData);
+      setFilms(apiData);
     } catch (err) {
       console.error(err)
     }
   }
 
-  console.log(data[0])
+  console.log(films)
 
   return (
     <>
       <Navbar />
       <div className="container">
         <p>Ciao!</p>
+        <Film films={films} />
       </div>
     </>
   )
 }
 
 export default App
-
-
-//  ### PROPERTIES TO USE FROM API AND NOTE TO REFERENCE NAUSICAA
-// - description
-// - director
-// - id
-// - image
-// - movie_banner
-// - original_title
-// - release_date
-// - rt_score - ==maybe==
-// - running_time
-// - title
-
-// special note about nausicaa?
