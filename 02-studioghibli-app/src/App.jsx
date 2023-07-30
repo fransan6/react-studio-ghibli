@@ -6,32 +6,42 @@ import Film from './components/Film';
 
 function App() {
   const [films, setFilms] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetchData();
+    const controller = new AbortController();
+    fetchData(controller);
+    return () => controller.abort();
   }, [])
 
-  async function fetchData () {
+  async function fetchData (abortController) {
     try {
-      const response = await fetch('https://ghibliapi.vercel.app/films');
+      const response = await fetch(
+        'https://ghibliapi.vercelv.app/films',
+        {signal: abortController.signal}
+      );
       if (!response.ok) {
         throw Error(`HTTP ${response.status}`)
       }
       const apiData = await response.json();
+      setIsLoading(false);
       setFilms(apiData);
+      setError(false);
     } catch (err) {
-      console.error(err)
+      setIsLoading(false);
+      setError(true);
+      console.error(err);
     }
   }
-
-  console.log(films)
 
   return (
     <>
       <Navbar />
       <div className="container">
-        <p>Ciao!</p>
-        <Film films={films} />
+        {isLoading && <p>Loading...</p>}
+        {error && <p>Apologies, something went wrong.</p>}
+        {(!isLoading && !error) && <Film films={films} />}
       </div>
     </>
   )

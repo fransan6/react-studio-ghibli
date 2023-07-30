@@ -6,12 +6,12 @@ export default function Film({ films }) {
     original_title,
     description,
     director,
-    id,
-    image,
-    movie_banner,
     release_date,
     running_time,
     rt_score
+    // id,
+    // image,
+    // movie_banner,
   } = films[0];
 
   return (
@@ -21,7 +21,7 @@ export default function Film({ films }) {
       <p>{description}</p>
       <p>Director: {director}</p>
       <p>Released: {release_date}</p>
-      <p>Running time: {{running_time}}</p>
+      <p>Running time: {running_time}</p>
       <p>Rotten Tomatoes: {rt_score}</p>
     </div>
   )
