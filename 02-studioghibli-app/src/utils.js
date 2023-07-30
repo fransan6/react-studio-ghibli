@@ -12,8 +12,12 @@ export default async function fetchData (abortController, setIsLoading, setFilms
     setFilms(apiData);
     setError(false);
   } catch (err) {
-    setIsLoading(false);
-    setError(true);
-    console.error(err);
+    if (err.name === 'AbortError') {
+      console.log(`Clean-up) Fetch aborted: ${err.message}`);
+    } else {
+      setIsLoading(false);
+      setError(true);
+      console.error(err);
+    }
   }
 }
