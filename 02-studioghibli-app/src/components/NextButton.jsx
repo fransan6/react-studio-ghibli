@@ -9,7 +9,6 @@ export default function NextButton({ index, setIndex, films }) {
     else {
       setIndex(oldIndex => oldIndex + 1);
     }
-    console.log(index)
   }
 
   return (

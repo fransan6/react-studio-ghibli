@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import NextButton from './NextButton';
+import PreviousButton from './PreviousButton';
 import { useState } from 'react'
 import '../styles/Film.css'
 
@@ -26,9 +27,7 @@ export default function Film({ films }) {
         <div className="film-details">
           <p>{description}</p>
           <div className='btn-container'>
-            {/* <button className='previous-btn'>
-              <AiOutlineLeft />
-            </button> */}
+            <PreviousButton films={films} index={index} setIndex={setIndex}/>
             <NextButton films={films} index={index} setIndex={setIndex}/>
           </div>
           <div className="film-details-bottom">
