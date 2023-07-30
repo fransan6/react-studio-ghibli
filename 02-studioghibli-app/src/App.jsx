@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+// import { Fragment } from 'react';
 import './App.css'
 
 function App() {
@@ -24,9 +25,9 @@ function App() {
   console.log(data[0])
 
   return (
-    <>
-      <div>Ciao!</div>
-    </>
+    <div className="container">
+      <p>Ciao!</p>
+    </div>
   )
 }
 
