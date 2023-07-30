@@ -1,9 +1,10 @@
 // import { Fragment } from 'react';
-import { useState, useEffect } from 'react'
-import { fetchData } from './utils'
+import { useState, useEffect } from 'react';
+import { fetchData } from './utils';
 import Navbar from './components/Navbar';
 import Film from './components/Film';
-import './App.css'
+import Form from './components/Form';
+import './App.css';
 
 function App() {
   const [films, setFilms] = useState([]);
@@ -20,11 +21,16 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-        {isLoading && <p>Loading...</p>}
-        {error && <p>Apologies, something went wrong.</p>}
-        {(!isLoading && !error) && <Film films={films} />}
+        {(!isLoading && !error) ? (
+          <>
+            <Form films={films} />
+            <Film films={films} />
+          </>
+        ) : (
+          <p>{isLoading ? 'Loading...' : 'Apologies, something went wrong.'}</p>
+        )}
       </div>
-    </>
+  </>
   )
 }
 

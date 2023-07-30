@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
-import { useState } from 'react'
-import '../styles/Film.css'
-import { minutesToHoursAndMinutes } from '../utils'
+import { useState } from 'react';
+import '../styles/Film.css';
+import { minutesToHoursAndMinutes } from '../utils';
 
 export default function Film({ films }) {
   const [index, setIndex] = useState(0);

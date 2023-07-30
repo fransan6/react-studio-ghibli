@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
-import '../styles/Next-PreviousButton.css'
+import '../styles/Next-PreviousButton.css';
 
 export default function PreviousButton({ index, setIndex, films }) {
   const handlePreviousFilm = () => {
@@ -10,7 +10,7 @@ export default function PreviousButton({ index, setIndex, films }) {
     else {
       setIndex(oldIndex => oldIndex - 1);
     }
-  }
+  };
 
   return (
     <button className='previous-btn' onClick={handlePreviousFilm}>
