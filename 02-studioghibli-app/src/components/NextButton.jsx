@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { AiOutlineRight } from 'react-icons/ai';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
+import '../styles/Next-PreviousButton.css'
 
 export default function NextButton({ index, setIndex, films }) {
   const handleNextFilm = () => {
@@ -13,7 +14,7 @@ export default function NextButton({ index, setIndex, films }) {
 
   return (
     <button className='next-btn' onClick={handleNextFilm}>
-      <AiOutlineRight />
+      <FaArrowAltCircleRight />
     </button>
   )
 }

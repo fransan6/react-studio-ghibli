@@ -1,9 +1,18 @@
-.film-titles h1 {
+.film-container {
+  background-color: white;
+  min-height: 475px;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(1, 9, 83, 0.2);
+}
+
+.film-container h1 {
   font-size: 2.3rem;
   text-align: center;
 }
 
-.film-titles h2 {
+.film-container h2 {
   font-size: 1.8rem;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
@@ -29,15 +38,9 @@
 .film-details-bottom {
   display: flex;
   justify-content: space-between;
-}
-
-.previous-btn, .next-btn {
-  font-size: 2rem;
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-}
-
-.to-check-size {
-  background-color: pink;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
 }

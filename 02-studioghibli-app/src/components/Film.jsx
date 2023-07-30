@@ -17,23 +17,21 @@ export default function Film({ films }) {
   } = films[index];
 
   return (
-    <div className="to-check-size">
-      <div className="film-titles">
-        <h1>{title}</h1>
-        <h2>{original_title}</h2>
-      </div>
+    <div className="film-container">
+      <h1>{title}</h1>
+      <h2>{original_title}</h2>
       <div className="film-layout">
         <img className="film-image" src={image} alt="Film poster" aria-label="Film poster" />
         <div className="film-details">
           <p>{description}</p>
-          <div className='btn-container'>
-            <PreviousButton films={films} index={index} setIndex={setIndex}/>
-            <NextButton films={films} index={index} setIndex={setIndex}/>
-          </div>
           <div className="film-details-bottom">
+            <p><b>Release year: </b>{release_date}</p>
             <p><b>Director: </b>{director}</p>
             <p><b>Running time: </b>{running_time} minutes</p>
-            <p><b>Release year: </b>{release_date}</p>
+          <div>
+            <PreviousButton films={films} index={index} setIndex={setIndex} />
+            <NextButton films={films} index={index} setIndex={setIndex} />
+          </div>
           </div>
         </div>
       </div>
