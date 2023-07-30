@@ -1,3 +1,4 @@
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import '../styles/Film.css'
 
@@ -22,6 +23,14 @@ export default function Film({ films }) {
         <img className="film-image" src={image} alt="Film poster" aria-label="Film poster" />
         <div className="film-details">
           <p>{description}</p>
+          <div className='btn-container'>
+            <button className='previous-btn'>
+              <AiOutlineLeft />
+            </button>
+            <button className='next-btn'>
+              <AiOutlineRight />
+            </button>
+          </div>
           <div className="film-details-bottom">
             <p><b>Director: </b>{director}</p>
             <p><b>Running time: </b>{running_time} minutes</p>

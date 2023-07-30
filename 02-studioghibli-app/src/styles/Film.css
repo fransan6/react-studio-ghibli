@@ -31,6 +31,13 @@
   justify-content: space-between;
 }
 
+.previous-btn, .next-btn {
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
 .to-check-size {
   background-color: pink;
 }
