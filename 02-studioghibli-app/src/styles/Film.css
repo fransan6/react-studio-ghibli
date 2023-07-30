@@ -1,6 +1,6 @@
 .film-container {
   background-color: white;
-  min-height: 475px;
+  min-height: 550px;
   position: relative;
   padding: 10px;
   border-radius: 10px;
@@ -26,13 +26,14 @@
 .film-image {
   height: 15rem;
   margin-right: 1rem;
+  margin-left: 2rem;
 }
 
 .film-details {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 1rem;
+  margin-right: 2rem
 }
 
 .film-details-bottom {
@@ -42,5 +43,5 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1rem;
+  margin: 1rem 2rem;
 }

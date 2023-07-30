@@ -21,3 +21,10 @@ export async function fetchData (abortController, setIsLoading, setFilms, setErr
     }
   }
 }
+
+export function minutesToHoursAndMinutes(minutes) {
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  return `${hours}h ${remainingMinutes}m`;
+}
