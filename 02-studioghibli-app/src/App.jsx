@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
 // import { Fragment } from 'react';
-import './App.css'
+import { useState, useEffect } from 'react'
 import { fetchData } from './utils'
 import Navbar from './components/Navbar';
 import Film from './components/Film';
+import './App.css'
 
 function App() {
   const [films, setFilms] = useState([]);

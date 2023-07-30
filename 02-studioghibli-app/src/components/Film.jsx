@@ -1,8 +1,10 @@
-import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import PropTypes from 'prop-types';
+import NextButton from './NextButton';
+import { useState } from 'react'
 import '../styles/Film.css'
 
 export default function Film({ films }) {
+  const [index, setIndex] = useState(0);
   const {
     title,
     original_title,
@@ -11,7 +13,7 @@ export default function Film({ films }) {
     release_date,
     running_time,
     image
-  } = films[0];
+  } = films[index];
 
   return (
     <div className="to-check-size">
@@ -24,12 +26,10 @@ export default function Film({ films }) {
         <div className="film-details">
           <p>{description}</p>
           <div className='btn-container'>
-            <button className='previous-btn'>
+            {/* <button className='previous-btn'>
               <AiOutlineLeft />
-            </button>
-            <button className='next-btn'>
-              <AiOutlineRight />
-            </button>
+            </button> */}
+            <NextButton films={films} index={index} setIndex={setIndex}/>
           </div>
           <div className="film-details-bottom">
             <p><b>Director: </b>{director}</p>
