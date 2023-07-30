@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 // import { Fragment } from 'react';
 import './App.css'
-import fetchData from './utils'
+import { fetchData } from './utils'
 import Navbar from './components/Navbar';
 import Film from './components/Film';
 

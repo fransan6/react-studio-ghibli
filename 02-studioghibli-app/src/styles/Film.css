@@ -1,0 +1,36 @@
+.film-titles h1 {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.film-titles h2 {
+  font-size: 1.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.film-layout {
+  display: flex;
+}
+
+.film-image {
+  height: 15rem;
+  margin-right: 1rem;
+}
+
+.film-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.film-details-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.to-check-size {
+  background-color: pink;
+}

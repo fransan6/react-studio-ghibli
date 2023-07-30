@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../styles/Film.css'
 
 export default function Film({ films }) {
   const {
@@ -8,21 +9,26 @@ export default function Film({ films }) {
     director,
     release_date,
     running_time,
-    rt_score
-    // id,
-    // image,
-    // movie_banner,
+    image
   } = films[0];
 
   return (
-    <div>
-      <h4>{title}</h4>
-      <h5>{original_title}</h5>
-      <p>{description}</p>
-      <p>Director: {director}</p>
-      <p>Release year: {release_date}</p>
-      <p>Running time: {running_time} minutes</p>
-      <p>Rotten Tomatoes: {rt_score}</p>
+    <div className="to-check-size">
+      <div className="film-titles">
+        <h1>{title}</h1>
+        <h2>{original_title}</h2>
+      </div>
+      <div className="film-layout">
+        <img className="film-image" src={image} alt="Film poster" aria-label="Film poster" />
+        <div className="film-details">
+          <p>{description}</p>
+          <div className="film-details-bottom">
+            <p><b>Director: </b>{director}</p>
+            <p><b>Running time: </b>{running_time} minutes</p>
+            <p><b>Release year: </b>{release_date}</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
