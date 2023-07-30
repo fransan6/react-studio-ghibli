@@ -20,8 +20,8 @@ export default function Film({ films }) {
       <h5>{original_title}</h5>
       <p>{description}</p>
       <p>Director: {director}</p>
-      <p>Released: {release_date}</p>
-      <p>Running time: {running_time}</p>
+      <p>Release year: {release_date}</p>
+      <p>Running time: {running_time} minutes</p>
       <p>Rotten Tomatoes: {rt_score}</p>
     </div>
   )

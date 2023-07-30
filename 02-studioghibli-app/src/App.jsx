@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 // import { Fragment } from 'react';
 import './App.css'
+import fetchData from './utils'
 import Navbar from './components/Navbar';
 import Film from './components/Film';
 
@@ -11,29 +12,9 @@ function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetchData(controller);
+    fetchData(controller, setIsLoading, setFilms, setError);
     return () => controller.abort();
   }, [])
-
-  async function fetchData (abortController) {
-    try {
-      const response = await fetch(
-        'https://ghibliapi.vercelv.app/films',
-        {signal: abortController.signal}
-      );
-      if (!response.ok) {
-        throw Error(`HTTP ${response.status}`)
-      }
-      const apiData = await response.json();
-      setIsLoading(false);
-      setFilms(apiData);
-      setError(false);
-    } catch (err) {
-      setIsLoading(false);
-      setError(true);
-      console.error(err);
-    }
-  }
 
   return (
     <>
