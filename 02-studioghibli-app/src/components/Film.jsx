@@ -13,7 +13,7 @@ export default function Film({ films, index, setIndex }) {
     release_date,
     running_time,
     image
-  } = films[index];
+  } = films[index] || {};
 
   return (
     <div className="film-container">
@@ -27,14 +27,14 @@ export default function Film({ films, index, setIndex }) {
             <p><b>Release year: </b>{release_date}</p>
             <p><b>Running time: </b>{minutesToHoursAndMinutes(running_time)}</p>
             <p><b>Director: </b>{director}</p>
-          <div>
-            {films.length > 1 &&
-              <>
-                <PreviousButton films={films} index={index} setIndex={setIndex} />
-                <NextButton films={films} index={index} setIndex={setIndex} />
-              </>
-            }
-          </div>
+            <>
+              {films.length > 1 &&
+                <>
+                  <PreviousButton films={films} index={index} setIndex={setIndex} />
+                  <NextButton films={films} index={index} setIndex={setIndex} />
+                </>
+              }
+            </>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-        {(!isLoading && !error) ? (
+        {(!isLoading && !error && films.length > 0) ? (
           <>
             <Form
               films={films}

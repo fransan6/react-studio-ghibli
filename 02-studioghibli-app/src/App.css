@@ -30,6 +30,7 @@ a {
 img {
   border-radius: 4px;
   margin-top: 5px;
+  filter: drop-shadow(0 0 0.75rem rgb(215, 242, 254));
 }
 
 .container {
