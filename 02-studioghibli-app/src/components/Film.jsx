@@ -32,20 +32,22 @@ export default function Film({ filteredFilms, index, setIndex }) {
             <p><b>Release year: </b>{release_date}</p>
             <p><b>Running time: </b>{minutesToHoursAndMinutes(running_time)}</p>
             <p><b>Director: </b>{director}</p>
-            {filteredFilms.length > 1 &&
-              <>
-                <PreviousButton
-                  filteredFilms={filteredFilms}
-                  index={index}
-                  setIndex={setIndex}
-                />
-                <NextButton
-                  filteredFilms={filteredFilms}
-                  index={index}
-                  setIndex={setIndex}
-                />
-              </>
-            }
+            <div>
+              {filteredFilms.length > 1 &&
+                <>
+                  <PreviousButton
+                    filteredFilms={filteredFilms}
+                    index={index}
+                    setIndex={setIndex}
+                  />
+                  <NextButton
+                    filteredFilms={filteredFilms}
+                    index={index}
+                    setIndex={setIndex}
+                  />
+                </>
+              }
+            </div>
           </div>
         </div>
       </div>

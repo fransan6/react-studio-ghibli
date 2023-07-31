@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchData } from './utils';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import Film from './components/Film';
 import Form from './components/Form';
 import './App.css';
@@ -24,6 +25,8 @@ function App() {
     <>
       <Navbar />
       <div className="container">
+        <Sidebar />
+        <div>
         {(!isLoading && !error && films.length > 0) ? (
           <>
             <Form
@@ -31,7 +34,7 @@ function App() {
               setFilteredFilms={setFilteredFilms}
             />
             <Film
-              films={filteredFilms}
+              filteredFilms={filteredFilms}
               index={index}
               setIndex={setIndex}
             />
@@ -39,6 +42,7 @@ function App() {
         ) : (
           <p>{isLoading ? 'Loading...' : 'Apologies, something went wrong.'}</p>
         )}
+        </div>
       </div>
   </>
   )
