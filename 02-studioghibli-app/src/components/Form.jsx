@@ -1,10 +1,21 @@
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import { useState } from 'react';
 import '../styles/Form.css';
 
-export default function Form({ films, selectedDirector, setSelectedDirector, handleFilter, handleClear}) {
+export default function Form({ films, setFilteredFilms}) {
+  const [selectedDirector, setSelectedDirector] = useState('');
   const everyFilmDirector = films.map(film => film.director);
   const directors = everyFilmDirector.reduce((acc, element) => acc.includes(element) ? acc : [...acc, element], []);
+
+  function handleFilter(selectedDropdown) {
+    const filteredFilms = films.filter(film => film.director === selectedDropdown);
+    setFilteredFilms(filteredFilms);
+  }
+
+  function handleClear() {
+    setFilteredFilms(films);
+  }
 
   return (
     <div className="form">
@@ -30,8 +41,5 @@ export default function Form({ films, selectedDirector, setSelectedDirector, han
 
 Form.propTypes = {
   films: PropTypes.array.isRequired,
-  selectedDirector: PropTypes.string.isRequired,
-  setSelectedDirector: PropTypes.func.isRequired,
-  handleFilter: PropTypes.func.isRequired,
-  handleClear: PropTypes.func.isRequired
+  setFilteredFilms: PropTypes.func.isRequired,
 }

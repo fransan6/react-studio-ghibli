@@ -10,17 +10,7 @@ function App() {
   const [error, setError] = useState(false);
   const [films, setFilms] = useState([]);
   const [filteredFilms, setFilteredFilms] = useState([]);
-  const [selectedDirector, setSelectedDirector] = useState('');
   const [index, setIndex] = useState(0);
-
-  function handleFilter(selectedDropdown) {
-    const filteredFilms = films.filter(film => film.director === selectedDropdown);
-    setFilteredFilms(filteredFilms);
-  }
-
-  function handleClear() {
-    setFilteredFilms(films)
-  }
 
   useEffect(() => {
     setIndex(0);
@@ -40,10 +30,8 @@ function App() {
           <>
             <Form
               films={films}
-              selectedDirector={selectedDirector}
-              setSelectedDirector={setSelectedDirector}
-              handleFilter={handleFilter}
-              handleClear={handleClear}
+              filteredFilms={filteredFilms}
+              setFilteredFilms={setFilteredFilms}
             />
             <Film
               films={filteredFilms}
