@@ -12,9 +12,7 @@ function App() {
   const [filteredFilms, setFilteredFilms] = useState([]);
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    setIndex(0);
-  }, [filteredFilms])
+  useEffect(() => {setIndex(0)}, [filteredFilms])
 
   useEffect(() => {
     const controller = new AbortController();
@@ -30,7 +28,6 @@ function App() {
           <>
             <Form
               films={films}
-              filteredFilms={filteredFilms}
               setFilteredFilms={setFilteredFilms}
             />
             <Film
