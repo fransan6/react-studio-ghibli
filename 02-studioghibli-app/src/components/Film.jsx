@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
+import '../styles/Film.css';
 import NextButton from './NextButton';
 import PreviousButton from './PreviousButton';
-import { useState } from 'react';
-import '../styles/Film.css';
 import { minutesToHoursAndMinutes } from '../utils';
 
-export default function Film({ films }) {
-  const [index, setIndex] = useState(0);
+export default function Film({ films, index, setIndex }) {
   const {
     title,
     original_title,
@@ -30,8 +28,12 @@ export default function Film({ films }) {
             <p><b>Running time: </b>{minutesToHoursAndMinutes(running_time)}</p>
             <p><b>Director: </b>{director}</p>
           <div>
-            <PreviousButton films={films} index={index} setIndex={setIndex} />
-            <NextButton films={films} index={index} setIndex={setIndex} />
+            {films.length > 1 &&
+              <>
+                <PreviousButton films={films} index={index} setIndex={setIndex} />
+                <NextButton films={films} index={index} setIndex={setIndex} />
+              </>
+            }
           </div>
           </div>
         </div>
@@ -41,5 +43,7 @@ export default function Film({ films }) {
 }
 
 Film.propTypes = {
-  films: PropTypes.array.isRequired
+  films: PropTypes.array.isRequired,
+  index: PropTypes.number.isRequired,
+  setIndex: PropTypes.func.isRequired
 }

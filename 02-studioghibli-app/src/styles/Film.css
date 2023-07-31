@@ -1,6 +1,6 @@
 .film-container {
   background-color: white;
-  min-height: 550px;
+  min-height: 510px;
   position: relative;
   padding: 10px;
   border-radius: 10px;
@@ -10,6 +10,7 @@
 .film-container h1 {
   font-size: 2.3rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .film-container h2 {

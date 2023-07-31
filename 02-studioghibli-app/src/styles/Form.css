@@ -1,0 +1,25 @@
+.form {
+  margin: 1.5rem;
+}
+
+.form-options {
+  margin: 0 0.8rem;
+  font-size: 1.1rem;
+}
+
+.form-btn {
+  background: #008abf;
+  border-color: transparent;
+  cursor: pointer;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.form-btn:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+}

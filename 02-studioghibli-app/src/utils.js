@@ -1,4 +1,4 @@
-export async function fetchData (abortController, setIsLoading, setFilms, setError) {
+export async function fetchData (abortController, setIsLoading, setError, setFilms, setFilteredFilms) {
   try {
     const response = await fetch(
       'https://ghibliapi.vercel.app/films',
@@ -10,6 +10,7 @@ export async function fetchData (abortController, setIsLoading, setFilms, setErr
     const apiData = await response.json();
     setIsLoading(false);
     setFilms(apiData);
+    setFilteredFilms(apiData);
     setError(false);
   } catch (err) {
     if (err.name === 'AbortError') {
