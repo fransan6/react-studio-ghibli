@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
-import '../styles/Next-PreviousButton.css';
+import '../styles/Next-PreviousBtns.css';
 
-export default function NextButton({ filteredFilms, index, setIndex }) {
+export default function NextBtn({ filteredFilms, index, setIndex }) {
   const handleNextFilm = () => {
     if (index === filteredFilms.length - 1) {
       setIndex(0);
@@ -19,7 +19,7 @@ export default function NextButton({ filteredFilms, index, setIndex }) {
   )
 }
 
-NextButton.propTypes = {
+NextBtn.propTypes = {
   filteredFilms: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired,
   setIndex: PropTypes.func.isRequired

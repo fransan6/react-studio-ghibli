@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import NextButton from './NextButton';
-import PreviousButton from './PreviousButton';
+import NextBtn from './NextBtn';
+import PreviousBtn from './PreviousBtn';
 import { minutesToHoursAndMinutes } from '../utils';
 import '../styles/Film.css';
 
@@ -35,12 +35,12 @@ export default function Film({ filteredFilms, index, setIndex }) {
             <div>
               {filteredFilms.length > 1 &&
                 <>
-                  <PreviousButton
+                  <PreviousBtn
                     filteredFilms={filteredFilms}
                     index={index}
                     setIndex={setIndex}
                   />
-                  <NextButton
+                  <NextBtn
                     filteredFilms={filteredFilms}
                     index={index}
                     setIndex={setIndex}
