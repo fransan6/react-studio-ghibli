@@ -36,6 +36,6 @@ export default function Form({ films, setFilteredFilms}) {
 }
 
 Form.propTypes = {
-  films: PropTypes.array.isRequired,
+  films: PropTypes.array,
   setFilteredFilms: PropTypes.func.isRequired,
 }

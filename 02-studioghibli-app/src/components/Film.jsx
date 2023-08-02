@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import NextBtn from './NextBtn';
 import PreviousBtn from './PreviousBtn';
+import FavouriteBtn from './FavouriteBtn';
 import { minutesToHoursAndMinutes } from '../utils';
 import '../styles/Film.css';
 
-export default function Film({ filteredFilms, index, setIndex }) {
+export default function Film({ filteredFilms, index, setIndex, favouriteFilms, setFavouriteFilms }) {
   const {
     title,
     original_title,
@@ -19,6 +20,12 @@ export default function Film({ filteredFilms, index, setIndex }) {
     <div className="film-container">
       <h1>{title}</h1>
       <h2>{original_title}</h2>
+      <FavouriteBtn
+        favouriteFilms={favouriteFilms}
+        setFavouriteFilms={setFavouriteFilms}
+        filteredFilms={filteredFilms}
+        index={index}
+      />
       <div className="film-layout">
         <img
           className="film-image"
@@ -56,7 +63,9 @@ export default function Film({ filteredFilms, index, setIndex }) {
 }
 
 Film.propTypes = {
-  filteredFilms: PropTypes.array.isRequired,
+  filteredFilms: PropTypes.array,
+  favouriteFilms: PropTypes.array.isRequired,
+  setFavouriteFilms: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
   setIndex: PropTypes.func.isRequired
 }

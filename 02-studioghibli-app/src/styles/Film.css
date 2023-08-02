@@ -1,3 +1,5 @@
+/* .favourite-btn style here as needs .film-container as 'position: relative' */
+
 .film-container {
   background-color: white;
   max-width: 900px;
@@ -44,4 +46,15 @@
   left: 0;
   right: 0;
   margin: 1rem 2rem;
+}
+
+.favourite-btn {
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: #c50e0e;
+  position: absolute;
+  top: 2.3rem;
+  left: 2.3rem;
 }

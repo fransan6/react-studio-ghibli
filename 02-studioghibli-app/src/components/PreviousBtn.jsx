@@ -20,7 +20,7 @@ export default function PreviousBtn({ filteredFilms, index, setIndex }) {
 }
 
 PreviousBtn.propTypes = {
-  filteredFilms: PropTypes.array.isRequired,
+  filteredFilms: PropTypes.array,
   index: PropTypes.number.isRequired,
   setIndex: PropTypes.func.isRequired
 }

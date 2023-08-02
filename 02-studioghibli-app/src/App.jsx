@@ -11,6 +11,7 @@ function App() {
   const [error, setError] = useState(false);
   const [films, setFilms] = useState([]);
   const [filteredFilms, setFilteredFilms] = useState([]);
+  const [favouriteFilms, setFavouriteFilms] = useState([]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {setIndex(0)}, [filteredFilms])
@@ -25,7 +26,7 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-        <Sidebar />
+      {(!isLoading && !error && films.length > 0) && <Sidebar />}
         <div>
         {(!isLoading && !error && films.length > 0) ? (
           <>
@@ -37,6 +38,8 @@ function App() {
               filteredFilms={filteredFilms}
               index={index}
               setIndex={setIndex}
+              favouriteFilms={favouriteFilms}
+              setFavouriteFilms={setFavouriteFilms}
             />
           </>
         ) : (
