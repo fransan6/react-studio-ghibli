@@ -6,8 +6,7 @@ export default function NextBtn({ filteredFilms, index, setIndex }) {
   const handleNextFilm = () => {
     if (index === filteredFilms.length - 1) {
       setIndex(0);
-    }
-    else {
+    } else {
       setIndex(oldIndex => oldIndex + 1);
     }
   };

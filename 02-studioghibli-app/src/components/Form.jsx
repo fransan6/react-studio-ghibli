@@ -8,7 +8,7 @@ export default function Form({ films, setFilteredFilms}) {
   const everyFilmDirector = films.map(film => film.director);
   const directors = everyFilmDirector.reduce((acc, element) => acc.includes(element) ? acc : [...acc, element], []);
 
-  function handleFilter(selectedDropdown) {
+  const handleFilter = (selectedDropdown) => {
     const filteredFilms = films.filter(film => film.director === selectedDropdown);
     setFilteredFilms(filteredFilms);
   }
