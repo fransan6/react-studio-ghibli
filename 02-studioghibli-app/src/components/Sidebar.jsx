@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import jiji from '../assets/jiji-shocked.jpg'
 import '../styles/Sidebar.css'
 
 export default function Sidebar({ favouriteFilms }) {
@@ -7,7 +8,7 @@ export default function Sidebar({ favouriteFilms }) {
       <h4>{film.title}</h4>
       <h5>{film.original_title}</h5>
       <img src={film.movie_banner} alt="Composition image of film elements" />
-      <p>Remove this film</p>
+      <p className="remove-favourite-text">Remove this film</p>
     </div>
     )
 
@@ -16,10 +17,17 @@ export default function Sidebar({ favouriteFilms }) {
       <h2>Favourites</h2>
       {
         favouriteFilms.length === 0 ?
-        <p>You dont have any favourites yet.</p>
+        <>
+          <p className="no-favourites-text">You dont have any favourites yet!</p>
+          <img
+            className="no-favourites-image"
+            src={jiji}
+            alt="Shocked black cat from Kiki's Delivery Service"
+          />
+        </>
         :
         <>
-          <p>Remove all films</p>
+          <p className="remove-favourite-text">Remove all films</p>
           {filmsList}
         </>
       }

@@ -39,6 +39,10 @@ h3 {
   font-size: 1.6rem;
 }
 
+img {
+  border-radius: 4px;
+}
+
 .container {
   display: flex;
   max-width: 1280px;
