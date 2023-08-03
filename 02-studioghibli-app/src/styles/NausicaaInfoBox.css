@@ -1,0 +1,13 @@
+.nausicaa-info-box {
+  background-color: #f0fbff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(1, 9, 83, 0.2);
+  margin: 2rem auto;
+  max-width: 950px;
+  font-size: 1rem;
+}
+
+.bolder-text {
+  font-weight: 500;
+}
