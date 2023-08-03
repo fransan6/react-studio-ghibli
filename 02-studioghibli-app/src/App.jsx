@@ -11,10 +11,16 @@ function App() {
   const [error, setError] = useState(false);
   const [films, setFilms] = useState([]);
   const [filteredFilms, setFilteredFilms] = useState([]);
-  const [favouriteFilms, setFavouriteFilms] = useState([]);
+  const [favouriteFilms, setFavouriteFilms] = useState(
+    JSON.parse(localStorage.getItem("favouriteFilms")) || []
+  );
   const [index, setIndex] = useState(0);
 
   useEffect(() => {setIndex(0)}, [filteredFilms])
+
+  useEffect(() => {
+    localStorage.setItem("favouriteFilms", JSON.stringify(favouriteFilms))
+  }, [favouriteFilms])
 
   useEffect(() => {
     const controller = new AbortController();
