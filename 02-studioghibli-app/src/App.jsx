@@ -29,7 +29,10 @@ function App() {
         {(!isLoading && !error) ? (
           <>
             <>
-              <Sidebar favouriteFilms={favouriteFilms}/>
+              <Sidebar
+                favouriteFilms={favouriteFilms}
+                setFavouriteFilms={setFavouriteFilms}
+              />
             </>
             <div>
               <Form
