@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Film from './components/Film';
 import Form from './components/Form';
+import NausicaaInfoBox from './components/NausicaaInfoBox';
 import './App.css';
 
 function App() {
@@ -58,7 +59,8 @@ function App() {
           <p>{isLoading ? 'Loading...' : 'Apologies, something went wrong.'}</p>
         )}
       </div>
-  </>
+      {(!isLoading && !error) && <NausicaaInfoBox />}
+    </>
   )
 }
 
