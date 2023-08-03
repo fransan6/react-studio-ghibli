@@ -1,5 +1,3 @@
-/* .favourite-btn style here as needs .film-container as 'position: relative' */
-
 .film-container {
   background-color: white;
   max-width: 900px;
@@ -25,10 +23,13 @@
   display: flex;
 }
 
-.film-image {
+.film-maindisplay-image {
   height: 15rem;
   margin-right: 1rem;
   margin-left: 2rem;
+  border-radius: 4px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 0.75rem rgb(215, 242, 254));
 }
 
 .film-details {
@@ -46,15 +47,4 @@
   left: 0;
   right: 0;
   margin: 1rem 2rem;
-}
-
-.favourite-btn {
-  font-size: 2rem;
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-  color: #c50e0e;
-  position: absolute;
-  top: 2.3rem;
-  left: 2.3rem;
 }

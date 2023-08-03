@@ -28,7 +28,7 @@ export default function Film({ filteredFilms, index, setIndex, favouriteFilms, s
       />
       <div className="film-layout">
         <img
-          className="film-image"
+          className="film-maindisplay-image"
           src={image}
           alt="Film poster"
           aria-label="Film poster"

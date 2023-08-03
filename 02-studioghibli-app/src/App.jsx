@@ -26,26 +26,28 @@ function App() {
     <>
       <Navbar />
       <div className="container">
-      {(!isLoading && !error && films.length > 0) && <Sidebar />}
-        <div>
-        {(!isLoading && !error && films.length > 0) ? (
+        {(!isLoading && !error) ? (
           <>
-            <Form
-              films={films}
-              setFilteredFilms={setFilteredFilms}
-            />
-            <Film
-              filteredFilms={filteredFilms}
-              index={index}
-              setIndex={setIndex}
-              favouriteFilms={favouriteFilms}
-              setFavouriteFilms={setFavouriteFilms}
-            />
+            <>
+              <Sidebar favouriteFilms={favouriteFilms}/>
+            </>
+            <div>
+              <Form
+                films={films}
+                setFilteredFilms={setFilteredFilms}
+              />
+              <Film
+                filteredFilms={filteredFilms}
+                index={index}
+                setIndex={setIndex}
+                favouriteFilms={favouriteFilms}
+                setFavouriteFilms={setFavouriteFilms}
+              />
+            </div>
           </>
         ) : (
           <p>{isLoading ? 'Loading...' : 'Apologies, something went wrong.'}</p>
         )}
-        </div>
       </div>
   </>
   )

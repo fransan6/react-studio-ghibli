@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { VscHeartFilled, VscHeart } from 'react-icons/vsc';
+import '../styles/Sidebar.css'  // note the btn styling location
 
 export default function FavouriteBtn({ favouriteFilms, setFavouriteFilms, filteredFilms, index }) {
   const isFilmFavourited = favouriteFilms.find((film) => film.title === filteredFilms[index].title);
