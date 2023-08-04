@@ -4,7 +4,7 @@
   max-height: 558px;
   overflow-y: auto;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(1, 9, 83, 0.2);
+  box-shadow: 0 0 10px rgba(1, 9, 83, 0.2);
   padding: 1.2rem;
 }
 
@@ -13,14 +13,14 @@
 }
 
 .no-favourites-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0.5rem 0;
 }
 
 .no-favourites-image {
   height: 12rem;
   display: block;
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 
 .remove-favourites-btn {

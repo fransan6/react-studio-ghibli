@@ -9,6 +9,5 @@
 
 .previous-btn:hover, .next-btn:hover {
   opacity: 0.8;
-  transition: 0.5s;
-  /* filter: drop-shadow(0 0 0.2rem #9fd4fd); */
+  transition: 0.3s;
 }

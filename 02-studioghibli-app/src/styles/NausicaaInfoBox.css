@@ -1,13 +1,59 @@
 .nausicaa-info-box {
   background-color: #f0fbff;
-  padding: 1.2rem;
+  padding: 1.4rem;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(1, 9, 83, 0.2);
-  margin: 2rem auto;
-  max-width: 950px;
-  font-size: 1rem;
+  margin: 0.5rem auto 2rem;
+  max-width: 900px;
+  font-size: 0.9rem;
+}
+
+.nausicaa-info-box button {
+  border: transparent;
+  background-color: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #222222;
+}
+
+.dropdown-initial-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.dropdown-info {
+  margin-top: 0.5rem;
+}
+
+.nausicaa-headers {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.nausicaa-image {
+  height: 15rem;
+  margin-right: 1rem;
+  margin-top: 0.3rem;
+  filter: drop-shadow(0 0 0.75rem rgb(215, 242, 254));
+}
+
+.nausicaa-image-and-description {
+  display: flex;
+}
+
+.nausicaa-film-details {
+  margin-top: 1rem;
+}
+
+.nausicaa-film-details-bottom {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bolder-text {
-  font-weight: 500;
+  font-weight: 600;
 }

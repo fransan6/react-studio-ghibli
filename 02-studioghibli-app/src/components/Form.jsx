@@ -29,7 +29,7 @@ export default function Form({ films, setFilteredFilms}) {
           }
         </select>
         <button className="form-btn" onClick={() => {handleFilter(selectedDirector)}}>Find</button>
-        <button className="form-btn" onClick={() => setFilteredFilms(films)}>Clear filter</button>
+        <button className="form-btn" onClick={() => setFilteredFilms(films)}>Clear</button>
       </label>
     </div>
   )

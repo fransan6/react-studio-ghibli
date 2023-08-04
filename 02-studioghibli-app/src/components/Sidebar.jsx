@@ -27,7 +27,7 @@ export default function Sidebar({ favouriteFilms, setFavouriteFilms }) {
       {
         favouriteFilms.length === 0 ?
         <>
-          <p className="no-favourites-text">You dont have any favourites! Just &apos;heart&apos; a film and it will appear here.</p>
+          <p className="no-favourites-text">You dont have any favourites! &apos;Heart&apos; a film and it will appear here.</p>
           <img
             className="no-favourites-image"
             src={jiji}
