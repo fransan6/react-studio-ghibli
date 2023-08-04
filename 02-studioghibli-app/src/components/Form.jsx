@@ -11,7 +11,7 @@ export default function Form({ films, setFilteredFilms}) {
   const handleFilter = (selectedDropdown) => {
     const filteredFilms = films.filter(film => film.director === selectedDropdown);
     setFilteredFilms(filteredFilms);
-  }
+  };
 
   return (
     <div className="form">

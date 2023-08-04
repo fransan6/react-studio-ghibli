@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import jiji from '../assets/jiji-shocked.jpg'
-import '../styles/Sidebar.css'
+import jiji from '../assets/jiji-shocked.jpg';
+import '../styles/Sidebar.css';
 
 export default function Sidebar({ favouriteFilms, setFavouriteFilms }) {
   const handleRemoveAllFilms = () => {
     setFavouriteFilms([]);
-  }
+  };
 
   const handleRemoveFilm = (favouriteFilmTitle) => {
     setFavouriteFilms(prevFilms =>
-      prevFilms.filter(film => film.title !== favouriteFilmTitle))
-  }
+      prevFilms.filter(film => film.title !== favouriteFilmTitle));
+  };
 
   const filmsList = favouriteFilms.map(film =>
     <div key={film.id} className="favourite-films-list">
@@ -19,7 +19,7 @@ export default function Sidebar({ favouriteFilms, setFavouriteFilms }) {
       <img src={film.movie_banner} alt="Composition image of film elements" />
       <button className="remove-favourites-btn" onClick={() => handleRemoveFilm(film.title)}>Remove: {film.title}</button>
     </div>
-    )
+    );
 
   return (
     <div className="sidebar">

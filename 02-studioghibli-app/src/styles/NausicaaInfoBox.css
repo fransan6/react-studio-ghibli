@@ -25,11 +25,11 @@
 
 .dropdown-info {
   margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .nausicaa-headers {
   margin-bottom: 0.8rem;
-  font-size: 1.3rem;
   text-align: center;
 }
 
@@ -42,10 +42,6 @@
 
 .nausicaa-image-and-description {
   display: flex;
-}
-
-.nausicaa-film-details {
-  margin-top: 1rem;
 }
 
 .nausicaa-film-details-bottom {
