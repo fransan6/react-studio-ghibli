@@ -8,7 +8,7 @@ export default function NausicaaInfoBox() {
 
   const handleDropdown = () => {
     setIsOpen(prevValue => !prevValue);
-  }
+  };
 
   return (
     <>

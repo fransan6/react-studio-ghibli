@@ -29,6 +29,7 @@
   border: transparent;
   background-color: transparent;
   text-align: left;
+  display: block;
 }
 
 .remove-favourites-btn:hover {
@@ -50,6 +51,11 @@
 .favourite-films-list {
   margin-top: 1rem;
 }
+
+.favourite-films-list h4 {
+  line-height: 1.4rem;
+}
+
 .favourite-films-list h5 {
   margin-bottom: 0.5rem;
 }
