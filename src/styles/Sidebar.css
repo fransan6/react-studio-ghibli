@@ -1,11 +1,12 @@
 .sidebar {
   background-color: white;
-  width: 310px;
-  max-height: 558px;
+  width: 19rem;
+  height: 30.6rem;
   overflow-y: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(1, 9, 83, 0.2);
+  border-radius: 0.6rem;
+  box-shadow: 0 0 0.5rem rgba(1, 9, 83, 0.2);
   padding: 1.2rem;
+  margin-top: 4.35rem;
 }
 
 .sidebar h2 {
@@ -30,6 +31,25 @@
   background-color: transparent;
   text-align: left;
   display: block;
+}
+
+.remove-all-favourites-btn {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: transparent;
+  background-color: transparent;
+  text-align: left;
+  display: block;
+  background-color: rgb(255, 203, 203);
+  padding: 0.2rem 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.remove-all-favourites-btn:hover {
+  background-color: rgb(255, 131, 131);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .remove-favourites-btn:hover {
@@ -64,29 +84,16 @@
   width: 10rem;
 }
 
-/* scrollbar styling - multiple stylings to accommodate different browsers */
-
-/* chrome, safari */
 .sidebar::-webkit-scrollbar {
-  width: 8px;
+  width: 0.5rem;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
   background-color: #f1b900;
-  border-radius: 4px;
+  border-radius: 0.3rem;
 }
 
-/* firefox, brave */
-.sidebar {
-  scrollbar-width: thin;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: #f1b900;
-  border-radius: 4px;
-}
-
-/* opera, edge */
 .sidebar {
   scrollbar-color: #f1b900 transparent;
+  scrollbar-width: thin;
 }

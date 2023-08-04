@@ -1,11 +1,11 @@
 .film-container {
   background-color: white;
-  max-width: 850px;
-  min-height: 480px;
+  max-width: 53rem;
+  min-height: 30.6rem;
   position: relative;
   padding: 0.7rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(1, 9, 83, 0.2);
+  border-radius: 0.6rem;
+  box-shadow: 0 0 0.5rem rgba(1, 9, 83, 0.2);
 }
 
 .film-container h1 {

@@ -32,16 +32,16 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <main>
         {(!isLoading && !error) ? (
           <>
-            <>
+            <section>
               <Sidebar
                 favouriteFilms={favouriteFilms}
                 setFavouriteFilms={setFavouriteFilms}
               />
-            </>
-            <div>
+            </section>
+            <section>
               <Form
                 films={films}
                 setFilteredFilms={setFilteredFilms}
@@ -53,13 +53,15 @@ function App() {
                 favouriteFilms={favouriteFilms}
                 setFavouriteFilms={setFavouriteFilms}
               />
-            </div>
+            </section>
           </>
         ) : (
           <p>{isLoading ? 'Loading...' : 'Apologies, something went wrong.'}</p>
         )}
-      </div>
-      {(!isLoading && !error) && <NausicaaInfoBox />}
+      </main>
+      <section>
+        {(!isLoading && !error) && <NausicaaInfoBox />}
+      </section>
     </>
   )
 }

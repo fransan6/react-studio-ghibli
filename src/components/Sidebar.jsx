@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import jiji from '../assets/jiji-shocked.jpg';
+import jiji from '../assets/jiji.jpg';
 import '../styles/Sidebar.css';
 
 export default function Sidebar({ favouriteFilms, setFavouriteFilms }) {
@@ -36,7 +36,7 @@ export default function Sidebar({ favouriteFilms, setFavouriteFilms }) {
         </>
         :
         <>
-          <button className="remove-favourites-btn" onClick={handleRemoveAllFilms}>Remove all films</button>
+          <button className="remove-all-favourites-btn" onClick={handleRemoveAllFilms}>Remove all films</button>
           {filmsList}
         </>
       }
