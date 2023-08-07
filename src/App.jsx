@@ -9,7 +9,7 @@ import './App.css';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [isError, setIsError] = useState(false);
   const [films, setFilms] = useState([]);
   const [filteredFilms, setFilteredFilms] = useState([]);
   const [favouriteFilms, setFavouriteFilms] = useState(
@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetchData(controller, setIsLoading, setError, setFilms, setFilteredFilms);
+    fetchData(controller, setIsLoading, setIsError, setFilms, setFilteredFilms);
     return () => controller.abort();
   }, [])
 
@@ -33,7 +33,7 @@ function App() {
     <>
       <Navbar />
       <main>
-        {(!isLoading && !error) ? (
+        {!isLoading && !isError ? (
           <>
             <section>
               <Sidebar
@@ -42,10 +42,7 @@ function App() {
               />
             </section>
             <section>
-              <Form
-                films={films}
-                setFilteredFilms={setFilteredFilms}
-              />
+              <Form films={films} setFilteredFilms={setFilteredFilms} />
               <Film
                 filteredFilms={filteredFilms}
                 index={index}
@@ -56,14 +53,12 @@ function App() {
             </section>
           </>
         ) : (
-          <p>{isLoading ? 'Loading...' : 'Apologies, something went wrong.'}</p>
+          <p>{isLoading ? "Loading..." : "Apologies, something went wrong."}</p>
         )}
       </main>
-      <section>
-        {(!isLoading && !error) && <NausicaaInfoBox />}
-      </section>
+      <section>{!isLoading && !isError && <NausicaaInfoBox />}</section>
     </>
-  )
+  );
 }
 
 export default App
