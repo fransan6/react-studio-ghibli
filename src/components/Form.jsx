@@ -5,8 +5,11 @@ import '../styles/Form.css';
 
 export default function Form({ films, setFilteredFilms}) {
   const [selectedDirector, setSelectedDirector] = useState("Hayao Miyazaki");
+
   const everyFilmDirector = films.map(film => film.director);
-  const directors = everyFilmDirector.reduce((acc, element) => acc.includes(element) ? acc : [...acc, element], []);
+  const directors = everyFilmDirector.reduce((acc, element) =>
+    acc.includes(element) ? acc : [...acc, element], []
+  );
 
   const handleFilter = (selectedDropdown) => {
     const filteredFilms = films.filter(film => film.director === selectedDropdown);
@@ -28,8 +31,18 @@ export default function Form({ films, setFilteredFilms}) {
             })
           }
         </select>
-        <button className="form-btn" onClick={() => {handleFilter(selectedDirector)}}>Find</button>
-        <button className="form-btn" onClick={() => setFilteredFilms(films)}>Clear</button>
+        <button
+          className="form-btn"
+          onClick={() => {handleFilter(selectedDirector)}}
+        >
+          Find
+        </button>
+        <button
+          className="form-btn"
+          onClick={() => setFilteredFilms(films)}
+        >
+          Clear
+        </button>
       </label>
     </div>
   )
