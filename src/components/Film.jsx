@@ -1,11 +1,17 @@
-import PropTypes from 'prop-types';
-import NextBtn from './NextBtn';
-import PreviousBtn from './PreviousBtn';
-import FavouriteBtn from './FavouriteBtn';
-import { minutesToHoursAndMinutes } from '../utils';
-import '../styles/Film.css';
+import PropTypes from "prop-types";
+import NextBtn from "./NextBtn";
+import PreviousBtn from "./PreviousBtn";
+import FavouriteBtn from "./FavouriteBtn";
+import { minutesToHoursAndMinutes } from "../utils";
+import "../styles/Film.css";
 
-export default function Film({ filteredFilms, index, setIndex, favouriteFilms, setFavouriteFilms }) {
+export default function Film({
+  filteredFilms,
+  index,
+  setIndex,
+  favouriteFilms,
+  setFavouriteFilms,
+}) {
   const {
     title,
     original_title,
@@ -13,7 +19,7 @@ export default function Film({ filteredFilms, index, setIndex, favouriteFilms, s
     director,
     release_date,
     running_time,
-    image
+    image,
   } = filteredFilms[index] || {};
 
   return (
@@ -27,19 +33,24 @@ export default function Film({ filteredFilms, index, setIndex, favouriteFilms, s
         index={index}
       />
       <div className="film-layout">
-        <img
-          className="film-maindisplay-image"
-          src={image}
-          alt="Film poster"
-        />
+        <img className="film-maindisplay-image" src={image} alt="Film poster" />
         <div className="film-details">
           <p>{description}</p>
           <div className="film-details-bottom">
-            <p><b>Release year: </b>{release_date}</p>
-            <p><b>Running time: </b>{minutesToHoursAndMinutes(running_time)}</p>
-            <p><b>Director: </b>{director}</p>
+            <p>
+              <b>Release year: </b>
+              {release_date}
+            </p>
+            <p>
+              <b>Running time: </b>
+              {minutesToHoursAndMinutes(running_time)}
+            </p>
+            <p>
+              <b>Director: </b>
+              {director}
+            </p>
             <div>
-              {filteredFilms.length > 1 &&
+              {filteredFilms.length > 1 && (
                 <>
                   <PreviousBtn
                     filteredFilms={filteredFilms}
@@ -52,13 +63,13 @@ export default function Film({ filteredFilms, index, setIndex, favouriteFilms, s
                     setIndex={setIndex}
                   />
                 </>
-              }
+              )}
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 Film.propTypes = {
@@ -66,5 +77,5 @@ Film.propTypes = {
   favouriteFilms: PropTypes.array.isRequired,
   setFavouriteFilms: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
-  setIndex: PropTypes.func.isRequired
-}
+  setIndex: PropTypes.func.isRequired,
+};

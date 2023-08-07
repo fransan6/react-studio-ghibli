@@ -1,18 +1,21 @@
-import PropTypes from 'prop-types';
-import { nanoid } from 'nanoid';
-import { useState } from 'react';
-import '../styles/Form.css';
+import PropTypes from "prop-types";
+import { nanoid } from "nanoid";
+import { useState } from "react";
+import "../styles/Form.css";
 
-export default function Form({ films, setFilteredFilms}) {
+export default function Form({ films, setFilteredFilms }) {
   const [selectedDirector, setSelectedDirector] = useState("Hayao Miyazaki");
 
-  const everyFilmDirector = films.map(film => film.director);
-  const directors = everyFilmDirector.reduce((acc, element) =>
-    acc.includes(element) ? acc : [...acc, element], []
+  const everyFilmDirector = films.map((film) => film.director);
+  const directors = everyFilmDirector.reduce(
+    (acc, element) => (acc.includes(element) ? acc : [...acc, element]),
+    []
   );
 
   const handleFilter = (selectedDropdown) => {
-    const filteredFilms = films.filter(film => film.director === selectedDropdown);
+    const filteredFilms = films.filter(
+      (film) => film.director === selectedDropdown
+    );
     setFilteredFilms(filteredFilms);
   };
 
@@ -24,31 +27,33 @@ export default function Form({ films, setFilteredFilms}) {
           name="selectedDirector"
           className="form-options"
           value={selectedDirector}
-          onChange={event => setSelectedDirector(event.target.value)}
+          onChange={(event) => setSelectedDirector(event.target.value)}
         >
-          {directors.map(director => {
-            return <option key={nanoid()} value={director}>{director}</option>
-            })
-          }
+          {directors.map((director) => {
+            return (
+              <option key={nanoid()} value={director}>
+                {director}
+              </option>
+            );
+          })}
         </select>
         <button
           className="form-btn"
-          onClick={() => {handleFilter(selectedDirector)}}
+          onClick={() => {
+            handleFilter(selectedDirector);
+          }}
         >
           Find
         </button>
-        <button
-          className="form-btn"
-          onClick={() => setFilteredFilms(films)}
-        >
+        <button className="form-btn" onClick={() => setFilteredFilms(films)}>
           Clear
         </button>
       </label>
     </div>
-  )
+  );
 }
 
 Form.propTypes = {
   films: PropTypes.array,
   setFilteredFilms: PropTypes.func.isRequired,
-}
+};
