@@ -1,16 +1,13 @@
 import PropTypes from "prop-types";
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import { allDirectors } from "../utils";
 import "../styles/Form.css";
 
 export default function Form({ films, setFilteredFilms }) {
   const [selectedDirector, setSelectedDirector] = useState("Hayao Miyazaki");
 
-  const everyFilmDirector = films.map((film) => film.director);
-  const directors = everyFilmDirector.reduce(
-    (acc, element) => (acc.includes(element) ? acc : [...acc, element]),
-    []
-  );
+  const directors = allDirectors(films);
 
   const handleFilter = (selectedDropdown) => {
     const filteredFilms = films.filter(

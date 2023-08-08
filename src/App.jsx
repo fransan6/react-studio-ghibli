@@ -9,13 +9,13 @@ import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [films, setFilms] = useState([]);
-  const [filteredFilms, setFilteredFilms] = useState([]);
+  const [isError, setIsError] = useState(null);
+  const [films, setFilms] = useState({});
+  const [filteredFilms, setFilteredFilms] = useState({});
+  const [index, setIndex] = useState(0);
   const [favouriteFilms, setFavouriteFilms] = useState(
     JSON.parse(localStorage.getItem("favouriteFilms")) || []
   );
-  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     setIndex(0);
