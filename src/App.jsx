@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Film from "./components/Film";
 import Form from "./components/Form";
-import NausicaaInfoBox from "./components/NausicaaInfoBox";
+import FilmInfoBox from "./components/FilmInfoBox";
 import "./App.css";
 
 function App() {
@@ -58,7 +58,7 @@ function App() {
           <p>{isLoading ? "Loading..." : "Apologies, something went wrong."}</p>
         )}
       </main>
-      <section>{!isLoading && !isError && <NausicaaInfoBox />}</section>
+      <section>{!isLoading && !isError && <FilmInfoBox />}</section>
     </>
   );
 }

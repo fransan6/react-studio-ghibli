@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import nausicaa from "../assets/nausicaa.jpg";
-import "../styles/NausicaaInfoBox.css";
+import "../styles/FilmInfoBox.css";
 
-export default function NausicaaInfoBox() {
+export default function FilmInfoBox() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdown = () => {
@@ -39,7 +39,7 @@ export default function NausicaaInfoBox() {
               was released in 1986. However, many of those who worked on
               Nausicaä went on to form Studio Ghibli and it was Miyazaki&apos;s
               first of many collaborations with composer Joe Hisaishi. Despite
-              not being producted by Studio Ghibli, it is typically considered
+              not being produced by Studio Ghibli, it is typically considered
               part of the canon.
             </p>
             <div className="nausicaa-headers">
