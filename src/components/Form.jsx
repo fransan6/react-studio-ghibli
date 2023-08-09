@@ -18,34 +18,33 @@ export default function Form({ films, setFilteredFilms }) {
 
   return (
     <div className="form">
-      <label>
-        Show only films directed by
-        <select
-          name="selectedDirector"
-          className="form-options"
-          value={selectedDirector}
-          onChange={(event) => setSelectedDirector(event.target.value)}
-        >
-          {directors.map((director) => {
-            return (
-              <option key={nanoid()} value={director}>
-                {director}
-              </option>
-            );
-          })}
-        </select>
-        <button
-          className="form-btn"
-          onClick={() => {
-            handleFilter(selectedDirector);
-          }}
-        >
-          Find
-        </button>
-        <button className="form-btn" onClick={() => setFilteredFilms(films)}>
-          Clear
-        </button>
-      </label>
+      <label htmlFor="selectedDirector">Show only films directed by</label>
+      <select
+        name="selectedDirector"
+        id="selectedDirector"
+        className="form-options"
+        value={selectedDirector}
+        onChange={(event) => setSelectedDirector(event.target.value)}
+      >
+        {directors.map((director) => {
+          return (
+            <option key={nanoid()} value={director}>
+              {director}
+            </option>
+          );
+        })}
+      </select>
+      <button
+        className="form-btn"
+        onClick={() => {
+          handleFilter(selectedDirector);
+        }}
+      >
+        Find
+      </button>
+      <button className="form-btn" onClick={() => setFilteredFilms(films)}>
+        Clear
+      </button>
     </div>
   );
 }
