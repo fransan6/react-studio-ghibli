@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchData } from "./utils";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Film from "./components/Film";
-import Form from "./components/Form";
-import FilmInfoBox from "./components/FilmInfoBox";
+import { Navbar, Sidebar, Film, Form, FilmInfoBox } from "./components/index";
 import "./App.css";
 
 function App() {
