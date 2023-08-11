@@ -7,7 +7,7 @@ export default function PreviousBtn({ filteredFilms, index, setIndex }) {
     if (index < 1) {
       setIndex(filteredFilms.length - 1);
     } else {
-      setIndex((oldIndex) => oldIndex - 1);
+      setIndex((prevIndex) => prevIndex - 1);
     }
   };
 

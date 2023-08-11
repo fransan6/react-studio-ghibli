@@ -16,10 +16,10 @@ export async function fetchData(
       return;
     }
     const apiData = await response.json();
-    setIsLoading(false);
-    setIsError(false);
     setFilms(apiData);
     setFilteredFilms(apiData);
+    setIsLoading(false);
+    setIsError(false);
   } catch (err) {
     if (err.name === "AbortError") {
       console.log(`(Clean-up) Fetch aborted: ${err.message}`);

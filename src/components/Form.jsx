@@ -4,7 +4,7 @@ import { useState } from "react";
 import { allDirectors } from "../utils";
 import "../styles/Form.css";
 
-export default function Form({ films, setFilteredFilms }) {
+export default function Form({ films, setFilteredFilms, setIndex }) {
   const [selectedDirector, setSelectedDirector] = useState("Hayao Miyazaki");
 
   const directors = allDirectors(films);
@@ -14,6 +14,12 @@ export default function Form({ films, setFilteredFilms }) {
       (film) => film.director === selectedDropdown
     );
     setFilteredFilms(filteredFilms);
+    setIndex(0);
+  };
+
+  const handleClear = () => {
+    setFilteredFilms(films);
+    setIndex(0);
   };
 
   return (
@@ -42,7 +48,7 @@ export default function Form({ films, setFilteredFilms }) {
       >
         Find
       </button>
-      <button className="form-btn" onClick={() => setFilteredFilms(films)}>
+      <button className="form-btn" onClick={handleClear}>
         Clear
       </button>
     </div>
@@ -52,4 +58,5 @@ export default function Form({ films, setFilteredFilms }) {
 Form.propTypes = {
   films: PropTypes.array,
   setFilteredFilms: PropTypes.func.isRequired,
+  setIndex: PropTypes.func.isRequired,
 };

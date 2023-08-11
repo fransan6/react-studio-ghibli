@@ -14,10 +14,6 @@ function App() {
   );
 
   useEffect(() => {
-    setIndex(0);
-  }, [filteredFilms]);
-
-  useEffect(() => {
     localStorage.setItem("favouriteFilms", JSON.stringify(favouriteFilms));
   }, [favouriteFilms]);
 
@@ -40,7 +36,11 @@ function App() {
               />
             </section>
             <section>
-              <Form films={films} setFilteredFilms={setFilteredFilms} />
+              <Form
+                films={films}
+                setFilteredFilms={setFilteredFilms}
+                setIndex={setIndex}
+              />
               <Film
                 filteredFilms={filteredFilms}
                 index={index}

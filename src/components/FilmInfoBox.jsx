@@ -7,7 +7,7 @@ export default function FilmInfoBox() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdown = () => {
-    setIsOpen((prevValue) => !prevValue);
+    setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
   return (
