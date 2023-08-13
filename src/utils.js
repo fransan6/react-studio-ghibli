@@ -19,7 +19,7 @@ export async function fetchData(
     setFilms(apiData);
     setFilteredFilms(apiData);
     setIsLoading(false);
-    setIsError(false);
+    setIsError(null);
   } catch (err) {
     if (err.name === "AbortError") {
       console.log(`(Clean-up) Fetch aborted: ${err.message}`);

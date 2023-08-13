@@ -26,9 +26,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
-        {!isLoading && !isError ? (
-          <>
+      {!isLoading && !isError ? (
+        <>
+          <main>
             <section>
               <Sidebar
                 favouriteFilms={favouriteFilms}
@@ -49,12 +49,18 @@ function App() {
                 setFavouriteFilms={setFavouriteFilms}
               />
             </section>
-          </>
-        ) : (
-          <p>{isLoading ? "Loading..." : "Apologies, something went wrong."}</p>
-        )}
-      </main>
-      <section>{!isLoading && !isError && <FilmInfoBox />}</section>
+          </main>
+          <section>
+            <FilmInfoBox />
+          </section>
+        </>
+      ) : (
+        <main>
+          <p className="loading-text">
+            {isLoading ? "Loading..." : "Apologies, something went wrong."}
+          </p>
+        </main>
+      )}
     </>
   );
 }
