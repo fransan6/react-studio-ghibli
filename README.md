@@ -7,12 +7,6 @@ A React app project to consolidate some of the basics of React. Built using Vite
 - `AbortController` is not really necessary for a project this size but I believe it is good practice to get used to implementing it now.
 - What you don't really get in self-learning, when reading React Dev documentation or watching a video, are errors in your code. There were multiple bugs that popped up and solving them was always invaluable.
 
-### To do (upon further learning):
-
-- Implement other hooks, if necessary, such as useContext.
-- Set up testing.
-- Not upon further learning, but make it responsive.
-
 ### Note
 
 - I initially created this in a private repo, alongside multiple projects, but have now moved it to its own repo.
