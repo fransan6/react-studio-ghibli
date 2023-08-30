@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { nanoid } from "nanoid";
 import { useState } from "react";
 import { allDirectors } from "../utils";
 import "../styles/Form.css";
@@ -34,7 +33,7 @@ export default function Form({ films, setFilteredFilms, setIndex }) {
       >
         {directors.map((director) => {
           return (
-            <option key={nanoid()} value={director}>
+            <option key={director} value={director}>
               {director}
             </option>
           );
