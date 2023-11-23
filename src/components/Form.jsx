@@ -5,7 +5,6 @@ import "../styles/Form.css";
 
 export default function Form({ films, setFilteredFilms, setIndex }) {
   const [selectedDirector, setSelectedDirector] = useState("Hayao Miyazaki");
-
   const directors = allDirectors(films);
 
   const handleFilter = (selectedDropdown) => {
